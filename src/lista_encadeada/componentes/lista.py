@@ -3,7 +3,7 @@
 
 class Cartao:
     def __init__(self, cor, nro):
-        # if cor not in ("A", "V"):
+
         self.cor = cor
         self.nro = nro
 
