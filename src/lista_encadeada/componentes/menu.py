@@ -21,11 +21,9 @@ def menu():
         option = choose_option()
 
         if option == "1":
-            print("Funcao Inserir()\n")
             lista_hospitalar.inserir()
         elif option == "2":
-            print("Funcao ImprimirLista()\n")
-            print(lista_hospitalar)
+            lista_hospitalar.imprimirListaEspera()
         elif option == "3":
             print("Funcao atenderPaciente()\n")
             # função atenderPaciente()
