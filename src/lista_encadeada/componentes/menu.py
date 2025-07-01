@@ -1,7 +1,10 @@
 # src/lista_encadeada/componentes/menu.py
 
+from lista_encadeada.componentes.lista import ListaHospitalar
+
 
 def menu():
+    lista_hospitalar = ListaHospitalar()
     while True:
         print(
             """
@@ -19,10 +22,10 @@ def menu():
 
         if option == "1":
             print("Funcao Inserir()\n")
-            # função inserir()
+            lista_hospitalar.inserir()
         elif option == "2":
             print("Funcao ImprimirLista()\n")
-            # função imprimirListaEspera()
+            print(lista_hospitalar)
         elif option == "3":
             print("Funcao atenderPaciente()\n")
             # função atenderPaciente()
