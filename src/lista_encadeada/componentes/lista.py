@@ -23,6 +23,8 @@ class Elemento:
 class ListaHospitalar:
     def __init__(self, nodos=None):
         self.head = None
+        self.contador_V = 0
+        self.contador_A = 0
         if nodos is not None:
             nodo = Elemento(nodos.pop(0))
             self.head = nodo
@@ -44,6 +46,30 @@ class ListaHospitalar:
         while nodo is not None:
             yield nodo
             nodo = nodo.proximo
+
+    def inserir(self):
+        cor = input(
+            """
+                    Informe a cor do card:
+                    A - Amarelo (Prioridade)
+                    V - Vermelho """
+        )
+        if cor == "V":
+            self.contador_V += 1
+            nro = self.contador_V
+        elif cor == "A":
+            self.contador_A += 1
+            nro = self.contador_A
+
+        cartao = Cartao(cor, nro)
+        nodo = Elemento(cartao)
+
+        if self.head is None:
+            self.head = nodo
+        elif cor == "V":
+            self.inserirSemPrioridade(nodo)
+        elif cor == "A":
+            self.inserirComPrioridade(nodo)
 
     def inserirNoInicio(self, nodo: Elemento):
         nodo.proximo = self.head
