@@ -8,40 +8,39 @@ def menu():
     while True:
         print(
             """
-               ________________________
-              | Atendimento Hospitalar |
-               ------------------------
-              """
+     ________________________
+    | Atendimento Hospitalar |
+     ------------------------
+"""
         )
         print("1 - Adicionar paciente a fila")
         print("2 - Mostrar pacientes na fila")
         print("3 - Chamar paciente")
         print("4 - Sair")
 
-        option = choose_option()
+        opcao = escolher_opcao()
 
-        if option == "1":
+        if opcao == "1":
             lista_hospitalar.inserir()
-        elif option == "2":
+        elif opcao == "2":
             lista_hospitalar.imprimirListaEspera()
-        elif option == "3":
-            print("Funcao atenderPaciente()\n")
-            # função atenderPaciente()
-        elif option == "4":
+        elif opcao == "3":
+            lista_hospitalar.atenderPaciente()
+        elif opcao == "4":
             print("Saindo do programa...")
             break
         else:
-            print("Invalid Option...")
+            print("Opcao invalida...Escolha novamente\n")
 
 
-def choose_option():
+def escolher_opcao():
     try:
-        option = input("Digite sua option: ")
+        opcao = input("Digite sua opcao: ")
     except Exception:
-        print("Digite uma option valid")
-        option = "99"
+        print("Digite uma opcao valida")
+        opcao = "99"
 
-    return option
+    return opcao
 
 
 if __name__ == "__main__":
