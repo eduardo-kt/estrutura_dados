@@ -41,6 +41,16 @@ class ListaHospitalar:
         nodos.append("None")
         return " -> ".join(nodos)
 
+    def imprimirListaEspera(self):
+        contador = 1
+        if self.head is None:
+            print("\nLista de espera vazia.")
+            return
+        print("\nLista de Espera:")
+        for nodo in self:
+            print(f"{contador}: {nodo.dado.cor}{nodo.dado.nro}")
+            contador += 1
+
     def __iter__(self):
         nodo = self.head
         while nodo is not None:
@@ -50,10 +60,12 @@ class ListaHospitalar:
     def inserir(self):
         cor = input(
             """
-                Informe a cor do card:
+                Digite:
                 A - Amarelo (Prioridade)
-                V - Vermelho """
-        )
+                V - Vermelho
+
+                Informe a cor do cartao: """
+        ).upper()
         if cor == "V":
             nro = self.contador_V
             self.contador_V += 1
