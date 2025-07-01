@@ -48,7 +48,7 @@ class ListaHospitalar:
         nodo.proximo = self.head
         self.head = nodo
 
-    def inserirNoFinal(self, nodo: Elemento):
+    def inserirSemPrioridade(self, nodo: Elemento):
         if self.head is None:
             self.head = nodo
             return
@@ -100,8 +100,8 @@ if __name__ == "__main__":
     Teste.inserirNoInicio(Elemento(c7))
 
     # Inserções no final
-    Teste.inserirNoFinal(Elemento(c5))
-    Teste.inserirNoFinal(Elemento(c6))
+    Teste.inserirSemPrioridade(Elemento(c5))
+    Teste.inserirSemPrioridade(Elemento(c6))
 
     print("Lista completa:")
     print(Teste)
