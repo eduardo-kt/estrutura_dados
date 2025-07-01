@@ -146,32 +146,4 @@ Favor, dirija-se ao atendimento.
 
 
 if __name__ == "__main__":
-    # Criando cartões
-    c1 = Cartao("V", 7)
-    c2 = Cartao("V", 15)
-    c3 = Cartao("V", 4)
-    c4 = Cartao("A", 240)
-    c5 = Cartao("A", 212)
-    c6 = Cartao("V", 64)
-    c7 = Cartao("V", 114)
-
-    Teste = ListaHospitalar()
-
-    # Inserções no início (ordem inversa na lista final)
-    Teste.inserirComPrioridade(Elemento(c4))
-    Teste.inserirComPrioridade(Elemento(c3))
-    Teste.inserirComPrioridade(Elemento(c2))
-    Teste.inserirComPrioridade(Elemento(c1))
-    Teste.inserirComPrioridade(Elemento(c7))
-
-    # Inserções no final
-    Teste.inserirSemPrioridade(Elemento(c5))
-    Teste.inserirSemPrioridade(Elemento(c6))
-
-    print("Lista completa:")
-    print(Teste)
-
-    Teste.deletar(c3)
-
-    print("\nApos atender o cartao %s:" % c3)
-    print(Teste)
+    pass
