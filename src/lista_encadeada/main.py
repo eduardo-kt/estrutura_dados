@@ -1,7 +1,13 @@
-# main.py
-# Projeto: Lista Encadeada
-# Autor: Eduardo Teixeira
-# Descrição: Aplicativo que gerencia lista de pacientes em espera
+"""
+main.py
+
+Lista Encadeada - fluxo principal do projeto
+
+Descrição: Aplicativo que gerencia lista de pacientes em espera
+
+Autor: Eduardo K Teixeira
+
+"""
 
 # TODO: (A) implementar uma lista encadeada simples
 # TODO: (B) implementar função inserirSemPrioridade(nodo)
