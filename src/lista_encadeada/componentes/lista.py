@@ -58,14 +58,18 @@ class ListaHospitalar:
             nodo = nodo.proximo
 
     def inserir(self):
-        cor = input(
-            """
-                Digite:
-                A - Amarelo (Prioridade)
-                V - Vermelho
+        cor = (
+            input(
+                """
+    Digite:
+    A - Amarelo (Prioridade)
+    V - Vermelho
 
-                Informe a cor do cartao: """
-        ).upper()
+    Informe a cor do cartao: """
+            )
+            .strip()
+            .upper()
+        )
         if cor == "V":
             nro = self.contador_V
             self.contador_V += 1
@@ -73,6 +77,9 @@ class ListaHospitalar:
         elif cor == "A":
             nro = self.contador_A
             self.contador_A += 1
+        else:
+            print("Opcao Invalida. Retornando ao menu principal.")
+            return
 
         cartao = Cartao(cor, nro)
         nodo = Elemento(cartao)
@@ -122,25 +129,20 @@ class ListaHospitalar:
             nodo.proximo = nodo_atual
             nodo_anterior.proximo = nodo
 
-    def deletar(self, cartao):
+    def atenderPaciente(self):
         if self.head is None:
-            raise Exception("Lista vazia")
-        # fmt: off
-        if (
-            self.head.dado.nro == cartao.nro
-            and self.head.dado.cor == cartao.cor
-        ):
-            self.head = self.head.proximo
+            print("Nenhum paciente em espera")
             return
 
-        nodo_anterior = self.head
-        for nodo in self:
-            if nodo.dado.nro == cartao.nro and nodo.dado.cor == cartao.cor:
-                nodo_anterior.proximo = nodo.proximo
-                return
-            nodo_anterior = nodo
+        paciente_atendido = self.head.dado
+        self.head = self.head.proximo
 
-        raise Exception(f"Nó com o cartão '{cartao}' não foi encontrado")
+        print(
+            f""""
+Paciente {paciente_atendido.cor}{paciente_atendido.nro}.
+Favor, dirija-se ao atendimento.
+"""
+        )
 
 
 if __name__ == "__main__":
