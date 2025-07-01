@@ -88,13 +88,8 @@ class ListaHospitalar:
         nodo_atual.proximo = nodo
 
     def inserirComPrioridade(self, nodo):
-        if self.head is None or self.head.dado.cor == "V":
-            nodo.proximo = self.head
+        if self.head is None:
             self.head = nodo
-            return
-
-        if nodo.dado.cor == "A":
-            self.inserirNoInicio(nodo)
             return
 
         nodo_anterior = None
