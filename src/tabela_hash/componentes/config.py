@@ -1,0 +1,3 @@
+N = 10
+TABELAHASH = [None] * N
+INICIAL = [TABELAHASH, N]
