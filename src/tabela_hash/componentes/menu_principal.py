@@ -1,5 +1,8 @@
 # src/tabela_hash/componentes/menu_principal.py
 
+from tabela_hash.componentes.funcoes_aux import inserir_estado
+from tabela_hash.componentes.config import INICIAL
+
 
 def menu():
 
@@ -21,6 +24,7 @@ def menu():
 
         if opcao == "1":
             print("FUNÇÃO INSERIR NA TABELA HASH...")
+            inserir_estado(*INICIAL)
         elif opcao == "2":
             print("FUNÇÃO REMOVER NA TABELA HASH")
         elif opcao == "3":
