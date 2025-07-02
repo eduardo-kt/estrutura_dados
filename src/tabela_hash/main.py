@@ -9,6 +9,8 @@ Autor: Eduardo K Teixeira
 github: https://github.com/eduardo-kt/estrutura_dados.git
 """
 
+from tabela_hash.componentes.menu_principal import menu
+
 # TODO: tabela hash com endereçamento em cadeia de
 #       10 posições representando os números de 0-9
 #       que irão representar os 26 estados + DF
@@ -31,3 +33,5 @@ github: https://github.com/eduardo-kt/estrutura_dados.git
 # TODO: imprimir tabela hash antes de inserir qualquer informação
 # TODO: imprimir tabela hash após inserir as UF
 # TODO: imprimir tabela hash após inserir UF fictícia
+
+menu()
