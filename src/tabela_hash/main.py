@@ -40,3 +40,26 @@ class ListaEncadeada:
     def inserir_no_inicio(self, nodo):
         nodo.proximo = self.head
         self.head = nodo
+
+
+def msg_customizada(titulo):
+    print("\n" + "=" * len(titulo))
+    print(titulo)
+    print("=" * len(titulo) + "\n")
+
+
+def hash_func(k, n):
+    return k % n
+
+
+def hash_func_sigla(k, n):
+    if k.upper() == "DF":
+        return 7
+    return (ord(k[0]) + ord(k[1])) % n
+
+
+def imprimir_hash(tabela_hash):
+    for i, lista in enumerate(tabela_hash):
+        print(f"{i}: {lista}")
+
+
