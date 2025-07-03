@@ -1,37 +1,42 @@
 """
 src/tabela_hash/main.py
 
-Tabela Hash - fluxo principal do projeto
+# Lista Encadeada
+class Elemento:
+    # construtor de inicialização da classe
+    def __init__(self, uf, nome_unidade):
+        self.uf = uf
+        self.nome_unidade = nome_unidade
+        self.proximo = None
 
-Descrição: Aplicativo para emplacamento de veiculos
+    # __repr__ é um método especial do Python
+    # use-o para criar a maneira como objeto
+    # é mostrado fora da função print
+    def __repr__(self):
+        return f"{self.nome_unidade}({self.uf})"
 
-Autor: Eduardo K Teixeira
-github: https://github.com/eduardo-kt/estrutura_dados.git
-"""
 
-from tabela_hash.componentes.menu_principal import menu
+# Cria a lista encadeada simples
+class ListaEncadeada:
+    def __init__(self):
+        self.head = None
 
-# TODO: tabela hash com endereçamento em cadeia de
-#       10 posições representando os números de 0-9
-#       que irão representar os 26 estados + DF
-# TODO: cada posição do vetor deve ser uma lista encadeada
-# TODO: a entrada da função hash é uma string 2 letras representando a UF
-# TODO: UF==DF deve retornar sempre 7
-# TODO: UF!=DF regra posição = (ascii(char1) + ascii(char2))MOD10
-# TODO: implementar tabela hash de 10 posições (valor inicial None)
-# TODO: implementar lista encadeada simples com
-#       Nodo(UF,nomeEstado, ponteiro para próximo). As 10 posições da tabela
-#       hash representam a cabeça de cada lista(head).
-# TODO: implementar inserção no início da lista encadeada
-#       (cada novo elemento sempre ser inserido no início da lista)
-# TODO: implementar a impressão da tabela hash (imprimir UF que
-#       estão na tabela, separados por posição)
-# TODO: implementar a função hash conforme enunciado
-# TODO: implementar a inserção das UF utilizando a função hash (ñ precisa
-#       usuário digitar, pode ser hard coded)
-# TODO: inserir além das UF, uma UF fictícia [UF,nome] = [ET, Eduardo Teixeira]
-# TODO: imprimir tabela hash antes de inserir qualquer informação
-# TODO: imprimir tabela hash após inserir as UF
-# TODO: imprimir tabela hash após inserir UF fictícia
+    def __repr__(self):
+        nodo = self.head
+        nodos = []
+        while nodo is not None:
+            nodos.append(f"[{nodo.uf},{nodo.nome_unidade}]")
+            nodo = nodo.proximo
+        nodos.append("None")
+        return " -> ".join(nodos)
 
-menu()
+    # Varre a lista
+    def __iter__(self):
+        nodo = self.head
+        while nodo is not None:
+            yield nodo
+            nodo = nodo.proximo
+
+    def inserir_no_inicio(self, nodo):
+        nodo.proximo = self.head
+        self.head = nodo
