@@ -95,3 +95,24 @@ def imprimir_hash(tabela_hash):
         print(f"{i}: {lista}")
 
 
+# Programa principal
+n = 10
+
+tabela_hash = [ListaEncadeada() for _ in range(n)]
+msg_customizada("Tabela Hash inicial")
+imprimir_hash(tabela_hash)
+
+for uf, nome in ufs:
+    pos = hash_func_sigla(uf, n)
+    nodo = Elemento(uf, nome)
+    tabela_hash[pos].inserir_no_inicio(nodo)
+msg_customizada("Tabela Hash com UF")
+imprimir_hash(tabela_hash)
+
+# ficticia
+uf, nome = uffic
+pos = hash_func_sigla(uf, n)
+nodo = Elemento(uf, nome)
+tabela_hash[pos].inserir_no_inicio(nodo)
+msg_customizada(f"Tabela Hash com UF + unidade ficticia {uffic}")
+imprimir_hash(tabela_hash)
